@@ -1,0 +1,37 @@
+{% extends'base.html.twig' %}
+
+{% block title %}Catshop: A purrsome experience!{% endblock %}
+
+{% block body %}
+<h1>Catshop: your monopoly-busting option for cats!</h1>
+
+<div>
+    Browse through {{ cats|length }} cats!
+
+    {% if cats|length >= 2 %}
+        <p>That's a catload of cats!</p>
+    {% endif %}
+</div>
+
+<div>
+    <h2>My cat</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <td>{{ myCat.name }}</td>
+        </tr>
+        <tr>
+            <th>Race</th>
+            <td>{{ myCat.race }}</td>
+        </tr>
+        <tr>
+            <th>Owner</th>
+            <td>{{ myCat.owner }}</td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td>{{ myCat.status }}</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}
