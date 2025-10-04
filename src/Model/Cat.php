@@ -9,7 +9,7 @@ class Cat
         private string $name,
         private string $race,
         private string $owner,
-        private string $status,
+        private CatStatusEnum $status,
     ) {
     }
 
@@ -37,9 +37,23 @@ class Cat
     }
 
 
-    public function getStatus(): string
+    public function getStatus(): CatStatusEnum
     {
         return $this->status;
+    }
+
+    public function getStatusString(): string
+    {
+        return $this->status->value;
+    }
+
+    public function getStatusImageFilename(): string
+    {
+        return match ($this->status) {
+            CatStatusEnum::EEPY => 'images/status-eepy.png',
+            CatStatusEnum::PURRING => 'images/status-purring.png',
+            CatStatusEnum::ZOOMIES => 'images/status-zoomies.png',
+        };
     }
 
 }
