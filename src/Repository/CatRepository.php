@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Model\Cat;
+use App\Model\CatStatusEnum;
 use Psr\Log\LoggerInterface;
 
 class CatRepository
@@ -21,21 +22,21 @@ class CatRepository
                 'Astroid Destroyer',
                 'Tabby',
                 'Mark',
-                'Hungry',
+                CatStatusEnum::ZOOMIES,
             ),
             new Cat(
                 2,
                 'Ivyberry',
-                'Tortoiseshell',
+                'Bobcat',
                 'James',
-                'Sleeping',
+                CatStatusEnum::EEPY,
             ),
             new Cat(
                 3,
                 'Chino',
                 'Tom',
                 'Kathryn',
-                'Purring',
+                CatStatusEnum::PURRING,
             ),
         ];
     }
